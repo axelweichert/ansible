@@ -8,7 +8,6 @@
       shell: df -h / | awk 'NR==2 {print $5}'
       register: disk_usage
     - name: send discord message when disk space is over 80%
-      uri:
       url: "https://discord.com/api/webhooks/1168656664774320240/fkVNEeyT9__CRlvNESI9QwdH_3203Z-Z_FGerzPj3_oCBJSjJc7nhpj0BXxzEr0jhYqo"
       method: POST
       body_format: json
