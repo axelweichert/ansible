@@ -7,12 +7,13 @@
     - name: check disk space available
       shell: df -h / | awk 'NR==2 {print $5}'
       register: disk_usage
-    - name: send discord message when disk space is over 80%
-      url: "https://discord.com/api/webhooks/1168656664774320240/fkVNEeyT9__CRlvNESI9QwdH_3203Z-Z_FGerzPj3_oCBJSjJc7nhpj0BXxzEr0jhYqo"
-      method: POST
-      body_format: json
-      body: '{"content": "Disk space on {{ inventory_hostname }} is above 80%!"}'
-      headers:
-      Content-Type: application/json
-      status_code: 204
-      when: disk_usage.stdout[:-1]|int > 80
+    # - name: send discord message when disk space is over 80%
+    #   uri:
+    #     url: "your-webhook"
+    #     method: POST
+    #     body_format: json
+    #     body: '{"content": "Disk space on {{ inventory_hostname }} is above 80%!"}'
+    #     headers:
+    #       Content-Type: application/json
+    #     status_code: 204
+    #   when: disk_usage.stdout[:-1]|int > 80
