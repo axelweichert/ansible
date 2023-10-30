@@ -1,6 +1,5 @@
 ---
-- name: install zsh
-  hosts: "{{ hosts }}"
+- hosts: "{{ hosts }}"
   become: yes
   tasks:
     - name: install zsh
