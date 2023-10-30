@@ -2,9 +2,9 @@
 - hosts: all
   become: yes
   tasks:
-    - name: install zsh
+    - name: install mc
       apt:
-        name: zsh
+        name: mc
         state: present
         update_cache: true
       become: true
