@@ -11,7 +11,7 @@
         #settings: ""
       #- name: "ipsum"
        # group: "ipsum"
-        #settings: |
+        settings: |
           export PATH="/usr/local/sbin:$path"
           alias l="ls -AF"
   tasks:
