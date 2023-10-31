@@ -17,12 +17,12 @@
   tasks:
     - name: Run ansible-role-oh-my-zsh.
       include_role:
-        name: "ansible-role-oh-my-zsh"
+        - name: "ansible-role-oh-my-zsh"
       vars:
         omz_user: "{{ item }}"
         # Only create `.zshrc` for user 'lorem'; item.settings will be
         # appended to `.zshrc` for the user 'ipsum'.
-        omz_zshrc_create: "{{ (item.name == 'lorem') | ternary(true, false) }}"
+        omz_zshrc_create: "{{ (item.name == 'root') | ternary(true, false) }}"
         omz_plugins:
           - "autojump"
           - "git"
