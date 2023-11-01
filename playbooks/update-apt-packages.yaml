@@ -1,7 +1,20 @@
 ---
-- hosts: all
-
-  become: true
+- hosts: master
+  become: yes
+  tasks:
+    - name: update apt packages
+      apt:
+        upgrade: yes
+        update_cache: yes
+- hosts: nodes
+  become: yes
+  tasks:
+    - name: update apt packages
+      apt:
+        upgrade: yes
+        update_cache: yes
+- hosts: py3_hosts
+  become: yes
   tasks:
     - name: update apt packages
       apt:
