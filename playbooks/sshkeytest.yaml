@@ -1,13 +1,13 @@
 ---
 - hosts: master
-  become: true
+  become: yes
   tasks:
     - name: update apt packages
       apt:
         upgrade: yes
         update_cache: yes
 - hosts: nodes
-  become: true
+  become: yes
   tasks:
     - name: update apt packages
       apt:
