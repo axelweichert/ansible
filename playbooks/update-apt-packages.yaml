@@ -13,7 +13,7 @@
       apt:
           upgrade: 'yes'
           update_cache: yes
-- hosts: py3_hosts
+- hosts: special
   become: yes
   tasks:
     - name: update apt packages
