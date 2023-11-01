@@ -4,8 +4,8 @@
     - name: Ensuring that free space on '/' is grater than 30%
       assert:
         that:
-          - not {{ item.mount == '/' and ( item.size_available < item.size_total - ( item.size_total|float * 0.3 ) ) }}
-         with_items: '{{ ansible_mounts }}'
+          - not "{{ item.mount == '/' and ( item.size_available < item.size_total - ( item.size_total|float * 0.3 ) ) }}"
+         with_items: "{{ ansible_mounts }}"
          ignore_errors: yes
          register: disk_free
     -  debug: var=disk_free
@@ -19,4 +19,4 @@
          from="my_email"
          to="to_email"
          subject='HDD Space Low'
-         body='{{ inventory_hostname }} is running low on disk space. Currently {{ disk_free.results['item']['size_available'] }}MB available.'
+         body="{{ inventory_hostname }}" is running low on disk space. Currently "{{ disk_free.results['item']['size_available'] }}"MB available.
