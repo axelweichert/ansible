@@ -13,10 +13,3 @@
       apt:
           upgrade: 'yes'
           update_cache: yes
-- hosts: special
-  become: yes
-  tasks:
-    - name: update apt packages
-      apt:
-          upgrade: 'yes'
-          update_cache: yes
