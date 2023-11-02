@@ -2,9 +2,9 @@
 - hosts: all
   become: yes
   tasks:
-    - name: install screenfetch
+    - name: install neofetch
       apt:
-        name: mc
+        name: neofetch
         state: present
         update_cache: true
       become: true
