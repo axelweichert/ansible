@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: install screenfetch
+      apt:
+        name: mc
+        state: present
+        update_cache: true
+      become: true
